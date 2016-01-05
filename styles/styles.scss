@@ -24,11 +24,6 @@ $font-2: 'Lato', sans-serif;
 $positive: #009245;
 $negative: #FF0000;
 
-@import "vendor/sweetalert";
-@import "partials/body-styles";
-@import "partials/gridly";
-@import "partials/lists";
-@import "partials/buttons";
-@import "partials/menu";
-@import "partials/media-queries";
-@import "partials/github-pages";
+/* main-styles is a copy of styles.css from RFL master. */
+@import "main-styles";
+@import "github-pages";
