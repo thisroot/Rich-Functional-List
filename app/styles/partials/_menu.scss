@@ -1,0 +1,162 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+#menu-content {
+    display: none;
+    height: auto;
+    background-color: $list-background;
+  overflow: hidden;
+}
+
+#menu-buttons {
+  background-color: $list-background;
+  height: 5em;
+  overflow: hidden;
+}
+
+h1 {
+  float: left;
+  font-size: 250%;
+  font-weight: 700;
+  padding-top: 0.25em;
+  margin-left: 0.5em;
+}
+
+#flash-messaging {
+  font-size: 1.5em;
+  margin-left: 1em;
+  margin-top: 1.1em;
+  float: left;
+}
+
+.positive {
+  color: $positive;
+}
+
+.negative {
+  color: $negative;
+}
+
+#main-add, #save, #undo, #redo {
+    font-size: 225%;
+    float: right;
+    margin: 0.5em 0.5em 0 0;
+    color: $list-header;
+    opacity: 0.75;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+}
+
+#main-add {
+  margin-right: 1em;
+}
+
+#redo.off {
+    color: #bbb;
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &:active{
+      opacity: 0.75;
+    }
+}
+
+#list-icon {
+  display: none;
+  position: relative;
+  float: right;
+  top: 1.5em;
+  right: 1.5em;
+  width: 2em;
+  height: 1.5em;
+  opacity: 0.75;
+
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+}
+
+#list-icon span {
+  display: block;
+  position: absolute;
+  height: 0.3em;
+  width: 100%;
+  background: $list-header;
+  border-radius: 0.5625em;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#list-icon span:nth-child(1) {
+  top: 0;
+}
+
+#list-icon span:nth-child(2), #list-icon span:nth-child(3) {
+  top: 0.75em;
+}
+
+#list-icon span:nth-child(4) {
+  top: 1.5em;
+}
+
+#list-icon.open span:nth-child(1) {
+  top: 0.75em;
+  width: 0%;
+  left: 50%;
+}
+
+#list-icon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#list-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#list-icon.open span:nth-child(4) {
+  top: 0.75em;
+  width: 0%;
+  left: 50%;
+}

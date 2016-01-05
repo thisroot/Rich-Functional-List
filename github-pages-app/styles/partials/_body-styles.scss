@@ -1,0 +1,49 @@
+* { 
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+html {
+  overflow-y: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+
+  /* http://colorzilla.com/gradient-editor/#add4e8+0,765baf+100 */
+  background: $background-gradient-from no-repeat center center; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  $background-gradient-from 0%, $background-gradient-to 100%) no-repeat center center; /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$background-gradient-from), color-stop(100%,$background-gradient-to)) no-repeat center center; /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  $background-gradient-from 0%,$background-gradient-to 100%) no-repeat center center; /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  $background-gradient-from 0%,$background-gradient-to 100%) no-repeat center center; /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  $background-gradient-from 0%,$background-gradient-to 100%) no-repeat center center; /* IE10+ */
+  background: linear-gradient(135deg,  $background-gradient-from 0%,$background-gradient-to 100%) no-repeat center center; /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$background-gradient-from', endColorstr='$background-gradient-to',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  /* Workaround for some mobile browsers */
+  min-height:100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Workaround for some mobile browsers */
+  min-height:100%;
+  min-width: 100%;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+#base-list {
+  position: relative;
+  margin: 6em auto 0 auto;
+}

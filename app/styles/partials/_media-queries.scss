@@ -1,0 +1,34 @@
+@media (max-width: 650px) {
+  #list-icon {
+    display: block;
+  }
+
+  #function-icons {
+    margin: 0 auto 0.5em auto;
+    float: none;
+  }
+
+  #menu-content {
+    text-align: center;
+  }
+
+  #main-add {
+    margin-right: 0.5em;
+  }
+
+  #main-add, #redo, #undo, #save {
+    float: none;
+  }
+}
+
+@media (max-width: 515px) {
+  #flash-messaging {
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .brick.large {
+    width: 320px;
+  }
+}

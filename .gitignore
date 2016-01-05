@@ -1,0 +1,12 @@
+/app/.idea
+/app/.sass-cache
+/app/node_modules
+/app/rich-functional-list/partials/RichList/RL.listeners.personal.js
+/app/rich-functional-list/jquery.rich-functional-list.personal.js
+/app/gruntfile-personal.js
+/app/styles/*.sass-cache
+/public/rich-functional-list/jquery.rich-functional-list.personal.min.js
+/resources/designs
+/resources/examples
+*.css.map
+Project Notes.txt
