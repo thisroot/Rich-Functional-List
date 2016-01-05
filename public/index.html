@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>Daily TODOs</title>
+    <link rel="List icon" href="../resources/images/icon-design.ico" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="styles/styles.min.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/ducksboard-gridster.js-3140374/dist/jquery.gridster.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+<section class="gridster">
+    <ul id="base-list">
+        <!-- Cards are loaded here dynamically. -->
+    </ul>
+</section>
+
+<nav>
+    <div id="menu-content">
+        <!-- Menu is loaded here dynamically. -->
+    </div>
+    <div id="menu-buttons">
+        <h1>Daily TODOs</h1>
+        <span id="flash-messaging"></span>
+        <div id="list-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="function-icons">
+            <span id="main-add" class="fa fa-plus-circle fa-fw"></span>
+            <span id="save" class="fa fa-floppy-o fa-fw"></span>
+        </div>
+    </div>
+</nav>
+
+<script src="rich-functional-list/jquery.rich-functional-list.min.js"></script>
+<script src="controllers/data-access.min.js"></script>
+<script src="controllers/parse-data.min.js"></script>
+<script src="controllers/parse-dom.min.js"></script>
+<script src="controllers/controller.min.js"></script>
+<script src="../vendor/ducksboard-gridster.js-3140374/dist/jquery.gridster.js"></script>
+<script src="view.min.js"></script>
+</body>
+</html>
