@@ -1,0 +1,250 @@
+html {
+  font-size: 16px;
+}
+
+nav {
+  background-color: $list-background;
+  #list-icon {
+    float: right;
+  }
+  ul {
+    list-style-type: none;
+    margin-top: -1.75em;
+    margin-bottom: 4.5em;
+    margin-right: 2em;
+    padding: 0;
+    display: block;
+    li {
+      margin-left: 1em;
+      float: right;
+      a {
+        text-decoration: none;
+        font-size: 1.15em;
+        color: #000;
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu-content {
+  display: none;
+}
+
+.header-logo {
+  position: relative;
+  width: 15em;
+  // top: -2.75em;
+  margin: 0.5em 0 -1.75em 2em;
+}
+
+.intro {
+  position: relative;
+  top: 7.45em;
+  width: 100%;
+  height: 22em;
+  background: $intro-background no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.intro-text {
+  width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 5.5em;
+    font-family: $font-1;
+    font-weight: 300;
+    margin: 0 0 1rem 0;
+    color: #000;
+    text-shadow: 0 0 0.2em #fff;
+  }
+  hr {
+    border-style: solid;
+    border-color: $accent-color;
+    border-width: 0.25em 0;
+    width: 8em;
+    margin: 1rem auto 2rem auto;
+  }
+  p {
+    text-align: center;
+    margin: 0 auto;
+    width: 25em;
+    font-size: 1.25em;
+    font-weight: 700;
+    text-shadow: 0 0 0.2em #fff;
+  }
+}
+
+h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 4em;
+  font-family: $font-1;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.cards-example {
+  position: relative;
+  top: 7.5em;
+  width: 100%;
+  text-align: center;
+  .demo-link {
+    width: 100%;
+    font-size: 1.5em;
+    color: $accent-color;
+    margin-top: 0.5em;
+
+  }
+  .brick {
+    margin: 0 2em 2em 0;
+    &:first-of-type {
+      float: left;
+    }
+    h2 {
+      text-align: initial;
+      width: auto;
+      color: #000;
+    }
+  }
+  #base-list {
+    width: 1100px;
+    margin: 2rem auto 0 auto;
+    text-align: left;
+  }
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  top: 7.5em;
+  text-align: center;
+  background-color: #fff;
+  clear: left;
+  padding: 1rem 0 1rem 0;
+  .author-text {
+    font-family: $font-1;
+    font-size: 3em;
+    color: $accent-color;
+    a {
+      font-family: $font-1;
+      font-size: 3rem;
+      color: $accent-color;
+    }
+  }
+  .social-buttons {
+    margin: 1rem 0;
+    a {
+      margin: 0 0.5em;
+      text-decoration: none;
+    }
+  }
+  .credit {
+    display: inline-block;
+    font-size: 2em;
+    width: 35rem;
+    a {
+      font-family: $font-2;
+      font-size: 2rem;
+      color: #000;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .mobile-menu-content {
+    display: none;
+    ul {
+      text-align: center;
+      margin-top: 1.75em;
+      margin-bottom: 1em;
+      li {
+        display: inline;
+        float: none;
+      }
+    }
+  }
+  #list-icon {
+    margin-top: 1em;
+    display: block;
+  }
+  .header-logo {
+    position: relative;
+    top: 0;
+    margin: 0.5em 0 1em 2em;
+  }
+  .cards-example {
+    .brick {
+      &:last-of-type {
+        clear: left;
+        float: left;
+      }
+    }
+    #base-list {
+      width: 536px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .intro-text {
+    width: 35em;
+    h1 {
+      font-size: 3.5em;
+    }
+    p {
+      width: 100%;
+    }
+  }
+  h2 {
+    font-size: 3em;
+  }
+  footer .author-text a, footer .author-text  {
+    font-size: 2.5rem;
+  }
+  footer .credit {
+    width: 100%;
+    font-size: 1rem;
+    a {
+      font-size: 1rem;
+    }
+  }
+
+}
+
+@media (max-width: 500px) {
+  .cards-example #base-list, .author-text {
+    width: 321px;
+  }
+  .intro-text {
+    width: 100%;
+    h1 {
+      font-size: 2.5em;
+    }
+    p {
+      width: 100%;
+    }
+  }
+  h2 {
+    font-size: 2em;
+  }
+  footer .author-text a, footer .author-text  {
+    font-size: 1.5rem;
+  }
+  footer .credit {
+    width: 100%;
+    font-size: 1rem;
+    a {
+      font-size: 1rem;
+    }
+  }
+}
