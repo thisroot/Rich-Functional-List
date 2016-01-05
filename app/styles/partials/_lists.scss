@@ -1,0 +1,113 @@
+/* All li's on the page are list-items. */
+li, li.rfl-list-title, li.rfl-list-data {
+    position: relative;
+    height: auto;
+}
+
+li.rfl-list-title {
+    padding: 1.5em 1.25em 1.75em 1.25em;
+
+}
+
+.rfl {
+  position:relative;
+  display:block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  font-size:13px;
+  line-height:20px;
+}
+
+.rfl-list {
+  display:block;
+  position:relative;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.rfl-subAccordion {
+  overflow: hidden;
+  display: none;
+  margin-top: 0;
+  margin-left: 2em;
+  position: relative;
+}
+
+/* mainAccordion must come AFTER subAccordion. */
+.rfl-mainAccordion {
+  overflow: hidden;
+  display: none;
+  margin-top: 1.75em;
+  margin-left: 0;
+  position: relative;
+}
+
+/* When openClass, set height to auto */
+.rfl-subAccordion .rfl-open > .rfl-subAccordion {
+  height: auto;
+}
+
+.rfl-item,.rfl-placeholder {
+  display:block;
+  position:relative;
+  margin:0;
+  padding:0;
+}
+
+li.rfl-item {
+  background-color: $item-background;
+  margin-top: 0.5em;
+  clear: none;
+  padding: 0.75em 0.5em 1em 0.5em;
+}
+
+.rfl-placeholder {
+  background: $placeholder-background;
+  margin: 0.5em 0;
+  padding: 0;
+}
+
+li.rfl-dragel {
+  position:absolute;
+  height: auto;
+  pointer-events:none;
+  z-index:9999;
+}
+
+.rfl-list-content {
+    z-index: 100;
+    position: relative;
+    padding: 0.25em 5em 0.25em 3.5em;
+}
+
+.rfl-title-card {
+    position: relative;
+}
+
+.rfl-title-content {
+  position: relative;
+  margin: 0 5.5em 0 4em;
+  top: 50%;
+  font-size: 1.2em;
+  font-weight: 700;
+  // padding: 1em 0;
+}
+
+.arrow-background {
+    z-index: 101;
+    position: absolute;
+    left: 0;
+    width: 3.25em;
+    background-color: $list-header;
+    height: 100%;
+    margin-top: -0.75em;
+}
+
+.arrow-background-title {
+  position: absolute;
+  left: 0;
+  width: 4em;
+  height: 100%;
+}

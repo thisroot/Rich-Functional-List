@@ -1,0 +1,27 @@
+$list-background: rgba(255, 255, 255, 0.75);
+$list-background-opaque: rgba(255, 255, 255, 1);
+$list-background-transparent: rgba(255, 255, 255, 0.75);
+$list-header: #363C44;
+
+$item-background: rgba(110, 169, 219, 0.75);
+$placeholder-background: rgba(110, 169, 219, 0.2);
+
+$trigger-main: #fff;
+$trigger-sub: rgba(240, 245, 250, 0.75);
+$trigger-sub-hover: rgba(240, 245, 250, 1);
+
+$handle-icon: url('../../resources/fonts/handle-icon-custom.svg');
+
+$background-gradient-from: #84C0F5;
+$background-gradient-to: #2A3170;
+
+$positive: #009245;
+$negative: #FF0000;
+
+@import "vendor/sweetalert";
+@import "partials/body-styles";
+@import "partials/gridly";
+@import "partials/lists";
+@import "partials/buttons";
+@import "partials/menu";
+@import "partials/media-queries";

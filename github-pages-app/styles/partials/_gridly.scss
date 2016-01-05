@@ -1,0 +1,25 @@
+  .brick {
+    position: relative; 
+    background: $list-background-opaque;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+    .brick .delete {
+      display: block;
+      color: #FFF;
+      background: rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      top: 0;
+      right: 0;
+      position: absolute;
+      text-align: center;
+      line-height: 40px; }
+    .brick.small {
+      width: 200px;
+      height: 200px; }
+    .brick.large {
+      width: 500px;
+       }
+    .brick.dragging {
+      background: $list-background-transparent; }
