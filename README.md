@@ -1,7 +1,7 @@
 # RICH FUNCTIONAL LIST
 #### v1.0.0
 
-RFL is a jQuery cards plugin built with good UX in mind. It's responsive, touch-compatible, and integrates well with other jQuery plugins. Everything you could want to build modern cards apps.
+RFL is a jQuery cards plugin built with good UX in mind. It's responsive, touch-compatible, and integrates well with other jQuery plugins. Everything you could want to build modern card apps.
 
 ## Bugs & things that need to be done:
   - Logic for dragging cards to empty main list.
