@@ -5,7 +5,7 @@
       <paths name="Local-Server">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="SVN-Repository-Checkout/projects/todo-app-javascript-github" />
+            <mapping local="$PROJECT_DIR$" web="SVN-Repository-Checkout/projects/Rich-Functional-List" />
           </mappings>
         </serverdata>
       </paths>

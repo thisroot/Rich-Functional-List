@@ -19,6 +19,9 @@
   #main-add, #redo, #undo, #save {
     float: none;
   }
+  .brick.large {
+    margin: 0 2em 2em 0;
+  }
 }
 
 @media (max-width: 515px) {
@@ -30,5 +33,6 @@
 
   .brick.large {
     width: 320px;
+    margin: 0 2em 2em -1.25em;
   }
 }

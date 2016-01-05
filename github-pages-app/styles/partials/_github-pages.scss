@@ -42,9 +42,8 @@ nav {
 
 .intro {
   position: relative;
-  top: 7.45em;
   width: 100%;
-  height: 22em;
+  height: 30em;
   background: $intro-background no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -54,8 +53,11 @@ nav {
 
 .intro-text {
   width: 45rem;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 8em;
+  left: 0; right: 0;
   h1 {
     text-align: center;
     width: 100%;
@@ -95,7 +97,6 @@ h2 {
 
 .cards-example {
   position: relative;
-  top: 7.5em;
   width: 100%;
   text-align: center;
   .demo-link {
@@ -126,7 +127,6 @@ h2 {
 footer {
   width: 100%;
   position: relative;
-  top: 7.5em;
   text-align: center;
   background-color: #fff;
   clear: left;
@@ -134,7 +134,7 @@ footer {
   .author-text {
     font-family: $font-1;
     font-size: 3em;
-    color: $accent-color;
+    color: #000;
     a {
       font-family: $font-1;
       font-size: 3rem;
@@ -150,11 +150,11 @@ footer {
   }
   .credit {
     display: inline-block;
-    font-size: 2em;
+    font-size: 1em;
     width: 35rem;
     a {
       font-family: $font-2;
-      font-size: 2rem;
+      font-size: 1rem;
       color: #000;
     }
   }
@@ -221,9 +221,12 @@ footer {
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 515px) {
   .cards-example #base-list, .author-text {
     width: 321px;
+  }
+  .cards-example .brick {
+    margin: 0 2em 2em -1.25em;
   }
   .intro-text {
     width: 100%;
