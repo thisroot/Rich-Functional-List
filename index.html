@@ -26,7 +26,6 @@
         <li><a href="https://github.com/amcavinue/Rich-Functional-List">GitHub</a></li>
         <li><a href="public/">Demo</a></li>
         <li><a href="https://github.com/amcavinue/Rich-Functional-List/archive/master.zip">Download</a></li>
-        <li><a href="#">Share</a></li>
     </ul>
     <div id="list-icon">
         <span></span>
@@ -44,6 +43,7 @@
         <p>
             RFL is a jQuery cards plugin built with good UX in mind. It's responsive, touch-compatible, and integrates well with other jQuery plugins. Everything you could want to build modern cards apps.
         </p>
+        <a href="https://github.com/amcavinue/Rich-Functional-List/archive/master.zip" class="download-main">Download</a>
     </div>
 </section>
 
@@ -170,6 +170,19 @@
     <span class="credit">Special thanks to <a href="http://dbushell.github.io/Nestable/">Nestable</a> whose code had a significant impact on building this plugin.</span>
 </footer>
 
+<script>
+    var footerOrigHeight = $('footer').height();
+    function footerHeight() {
+        var nav = $('nav').height(),
+                intro = $('.intro').height(),
+                cardsExample = $('.cards-example').height(),
+                calcHeight = $(window).height() - nav - intro - cardsExample;
+                newHeight = calcHeight > footerOrigHeight ? (footerOrigHeight + calcHeight) : footerOrigHeight;
+        $('footer').height(newHeight);
+    }
+    footerHeight();
+    $(window).resize(footerHeight);
+</script>
 <script src="rich-functional-list/jquery.rich-functional-list.min.js"></script>
 <script src="controllers/controller.js"></script>
 <script src="view.js"></script>

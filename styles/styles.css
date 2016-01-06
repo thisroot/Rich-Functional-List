@@ -1191,7 +1191,7 @@ li.rfl-dragel {
 .buttons-title .icon-handle, .buttons .icon-handle {
   width: 1.25em;
   height: 1.25em;
-  background-image: url("../../resources/fonts/handle-icon-custom.svg");
+  background-image: url("../resources/fonts/handle-icon-custom.svg");
   background-repeat: no-repeat;
   margin-left: 0.25em;
   margin-top: -0.1em;
@@ -1416,7 +1416,7 @@ nav ul li a:hover {
 .intro {
   position: relative;
   width: 100%;
-  height: 30em;
+  height: 35em;
   background: url("../resources/images/screenshot-background-2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1430,7 +1430,8 @@ nav ul li a:hover {
   margin-right: auto;
   margin-top: 8em;
   left: 0;
-  right: 0; }
+  right: 0;
+  text-align: center; }
 
 .intro-text h1 {
   text-align: center;
@@ -1440,22 +1441,33 @@ nav ul li a:hover {
   font-weight: 300;
   margin: 0 0 1rem 0;
   color: #000;
-  text-shadow: 0 0 0.2em #fff; }
+  text-shadow: 0 0 0.2em #fff;
+  float: left; }
 
 .intro-text hr {
   border-style: solid;
   border-color: #EDB200;
   border-width: 0.25em 0;
   width: 8em;
-  margin: 1rem auto 2rem auto; }
+  margin: 1rem auto 2rem auto;
+  clear: left; }
 
 .intro-text p {
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   width: 25em;
   font-size: 1.25em;
   font-weight: 700;
   text-shadow: 0 0 0.2em #fff; }
+
+.intro-text .download-main {
+  padding: 10px 15px;
+  background: #EDB200;
+  font-size: 2em;
+  text-decoration: none;
+  color: #000; }
+  .intro-text .download-main:hover {
+    opacity: 0.75%; }
 
 h2 {
   text-align: center;
@@ -1495,6 +1507,7 @@ h2 {
 
 footer {
   width: 100%;
+  height: auto;
   position: relative;
   text-align: center;
   background-color: #fff;
@@ -1569,7 +1582,8 @@ footer .credit a {
   h2 {
     font-size: 3em; }
 
-  footer .author-text a, footer .author-text {
+  footer .author-text a,
+  footer .author-text {
     font-size: 2.5rem; }
 
   footer .credit {
@@ -1579,7 +1593,8 @@ footer .credit a {
   footer .credit a {
     font-size: 1rem; } }
 @media (max-width: 515px) {
-  .cards-example #base-list, .author-text {
+  .cards-example #base-list,
+  .author-text {
     width: 321px; }
 
   .cards-example .brick {
@@ -1597,7 +1612,8 @@ footer .credit a {
   h2 {
     font-size: 2em; }
 
-  footer .author-text a, footer .author-text {
+  footer .author-text a,
+  footer .author-text {
     font-size: 1.5rem; }
 
   footer .credit {
