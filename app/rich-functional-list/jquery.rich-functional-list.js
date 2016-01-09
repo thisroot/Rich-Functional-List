@@ -379,7 +379,6 @@ $.RichList.prototype.deleteInnerItems = function() {
             rflOptions.domUpdate.call(currList);
         }
     });
-
 };
 
 function deleteItem(confirmed, $callObj) {
@@ -544,7 +543,8 @@ $.RichList.prototype.dragStop = function(e, list) {
     var item = items.floating.children(rflOptions.itemNode).first(),
         $mainList = $(this.list.$rootList[0]).children('.' + rflOptions.mainAccordionClass),
         homeListNum = this.list.$rootList.data('list-number'),
-        currNum = items.placeholder.parents('li[data-list-number]').data('list-number');
+        currNum = items.placeholder.parents('li[data-list-number]').data('list-number'),
+        newList = $callObject.data('list' + currNum);
     // Put the item & children in the list.
     items.placeholder.replaceWith(item);
     if (items.floating.contents) {
@@ -563,8 +563,10 @@ $.RichList.prototype.dragStop = function(e, list) {
     this.handleListeners();
     this.deleteItemListener();
     this.addItemListener();
+    this.deleteItemListener.call(newList);
+    this.addItemListener.call(newList);
     rflOptions.domUpdate.call(this);
-    rflOptions.domUpdate.call($callObject.data('list' + currNum));
+    rflOptions.domUpdate.call(newList);
 };
 
 $.RichList.prototype.dragMove = function(e, list) {
