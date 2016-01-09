@@ -13,6 +13,7 @@ function startView() {
         subListMain     = '<ul style="display: block;" class="rfl-subAccordion rfl-list rfl-mainAccordion rfl-trigger-item rfl-open"></ul>',
         mainTrigger     = '<span class="fa fa-chevron-right rfl-trigger rfl-trigger-main"></span>',
         rflOptions      = {
+            removeMainList      : function($item) {gridsterRemoveItem($item);},
             triggerRotClass     : 'fa-rotate-90',
             newItemMarkup       : newCard,
             openTriggerMarkup   : openTrigger,
@@ -34,6 +35,10 @@ function startView() {
         $(this).toggleClass('open');
         $('.mobile-menu-content').slideToggle(350);
     });
+}
+
+function gridsterRemoveItem($item) {
+    $item.remove();
 }
 
 function updateWindow(windowSize) {
