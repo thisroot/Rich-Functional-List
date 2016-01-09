@@ -39,6 +39,7 @@ var rflDefaults = {
         // Optional functions.
         stateUpdate          : function() {return;},
         domUpdate            : function() {return;},
+        removeMainList       : function() {return;},
 
         // Custom markup.
         newItemMarkup        : '',

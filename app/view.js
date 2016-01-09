@@ -15,6 +15,7 @@ function startView() {
         rflOptions      = {
             stateUpdate         : function() {saveState.listsChanged = true;},
             domUpdate           : function() {gridsterUpdate.call(this);},
+            removeMainList      : function($item) {gridsterRemoveItem($item);},
             triggerRotClass     : 'fa-rotate-90',
             newItemMarkup       : newCard,
             openTriggerMarkup   : openTrigger,
@@ -69,6 +70,11 @@ function startView() {
         $baseList.rflListeners();
         $baseList.find('h2:last').trigger('click');
     });
+}
+
+function gridsterRemoveItem($item) {
+    var gridster = $(".gridster #base-list").gridster().data('gridster');
+    gridster.remove_widget($item);
 }
 
 function gridsterResizeCard() {

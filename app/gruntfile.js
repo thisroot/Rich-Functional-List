@@ -59,16 +59,6 @@ module.exports = function(grunt){
                 src: [
                     'data/save-json-data.php'
                 ]
-            },
-            rflMin: {
-                src: '../public/rich-functional-list/jquery.rich-functional-list.min.js',
-                dest: '../github-pages-app/rich-functional-list/jquery.rich-functional-list.min.js'
-            },
-            styles: {
-                cwd: 'styles',
-                src: ['**/*', '!**/styles.css', '!**/styles.scss', '!**/styles.css.map'],
-                dest: '../github-pages-app/styles/',
-                expand: true
             }
         }
     });

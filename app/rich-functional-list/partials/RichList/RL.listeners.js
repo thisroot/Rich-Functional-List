@@ -68,44 +68,70 @@ $.RichList.prototype.addItemListener = function() {
 };
 
 $.RichList.prototype.deleteItemListener = function() {
-    this.list.$rootList.find('.' + rflOptions.deleteClass).unbind().click(function() {
+    this.deleteMainList();
+    this.deleteInnerItems();
+};
+
+$.RichList.prototype.deleteMainList = function() {
+    this.list.$rootList.find('.' + rflOptions.deleteClass).first().unbind().click(function() {
         var $callObj = $(this),
             confirmation;
-        function deleteItem(confirmed) {
-            if (confirmed) {
-                var $item
-                    = ($callObj.parents('.' + rflOptions.titleItemClass).length)
-                    ? ($callObj.parents('.' + rflOptions.titleItemClass).parent('.' + rflOptions.listTitle))
-                    : ($callObj.parents('.' + rflOptions.itemClass));
-
-                saveState.listsChanged = true;
-
-                // If removing the last item in the main-list.
-                // Else if removing the last item in the sublist.
-                if ($item.parent('.' + rflOptions.mainAccordionClass).children('.' + rflOptions.itemClass).length === 1) {
-                    $item.parent('.' + rflOptions.mainAccordionClass).prev('.' + rflOptions.titleItemClass).children().remove('.' + rflOptions.triggerClass);
-                    $item.parent('.' + rflOptions.mainAccordionClass).remove();
-                } else if ($item.parent('.' + rflOptions.subAccordionClass).children('.' + rflOptions.itemClass).length === 1) {
-                    // Remove trigger icon & class.
-                    $item.parent('.' + rflOptions.subAccordionClass).parent('.' + rflOptions.subItemClass).prev('.' + rflOptions.listTitle).children().remove('.' + rflOptions.triggerClass);
-                    $item.parent('.' + rflOptions.subAccordionClass).parent('.' + rflOptions.subItemClass).prev('.' + rflOptions.listTitle).removeClass(rflOptions.listTitle);
-                    $item.parent('.' + rflOptions.subAccordionClass).parent('.' + rflOptions.subItemClass).remove();
-                    $item.parent('.' + rflOptions.subAccordionClass).remove();
-                }
-
-                $item.next('.' + rflOptions.subItemClass).children(rflOptions.listNode).find('*').remove();
-                $item.next('.' + rflOptions.subItemClass).children(rflOptions.listNode).remove();
-                $item.next('.' + rflOptions.subItemClass).remove();
-                $item.find('*').remove();
-                $item.remove();
-
-                rflOptions.domUpdate.call(this);
-            }
-        }
         confirmation = window.confirm("Are you sure you want to delete this card & all its children?");
         if (confirmation) {
-            deleteItem(true);
-        }
+            var $item
+                = ($callObj.parents('.' + rflOptions.titleItemClass).length)
+                ? ($callObj.parents('.' + rflOptions.titleItemClass).parent('.' + rflOptions.listTitle))
+                : ($callObj.parents('.' + rflOptions.itemClass));
 
+            saveState.listsChanged = true;
+            $item.next('.' + rflOptions.subItemClass).children(rflOptions.listNode).find('*').remove();
+            $item.next('.' + rflOptions.subItemClass).children(rflOptions.listNode).remove();
+            $item.next('.' + rflOptions.subItemClass).remove();
+            $item.find('*').remove();
+            rflOptions.removeMainList($item);
+        }
     });
 };
+
+$.RichList.prototype.deleteInnerItems = function() {
+    var currList = this;
+    this.list.$rootList.find('.' + rflOptions.deleteClass).not(':first').unbind().click(function() {
+        var $callObj = $(this),
+            confirmation;
+        confirmation = window.confirm("Are you sure you want to delete this card & all its children?");
+        if (confirmation) {
+            deleteItem(true, $callObj);
+            rflOptions.domUpdate.call(currList);
+        }
+    });
+};
+
+function deleteItem(confirmed, $callObj) {
+    if (confirmed) {
+        var $item
+            = ($callObj.parents('.' + rflOptions.titleItemClass).length)
+            ? ($callObj.parents('.' + rflOptions.titleItemClass).parent('.' + rflOptions.listTitle))
+            : ($callObj.parents('.' + rflOptions.itemClass));
+
+        saveState.listsChanged = true;
+
+        // If removing the last item in the main-list.
+        // Else if removing the last item in the sublist.
+        if ($item.parent('.' + rflOptions.mainAccordionClass).children('.' + rflOptions.itemClass).length === 1) {
+            $item.parent('.' + rflOptions.mainAccordionClass).prev('.' + rflOptions.titleItemClass).children().remove('.' + rflOptions.triggerClass);
+            $item.parent('.' + rflOptions.mainAccordionClass).remove();
+        } else if ($item.parent('.' + rflOptions.subAccordionClass).children('.' + rflOptions.itemClass).length === 1) {
+            // Remove trigger icon & class.
+            $item.parent('.' + rflOptions.subAccordionClass).parent('.' + rflOptions.subItemClass).prev('.' + rflOptions.listTitle).children().remove('.' + rflOptions.triggerClass);
+            $item.parent('.' + rflOptions.subAccordionClass).parent('.' + rflOptions.subItemClass).prev('.' + rflOptions.listTitle).removeClass(rflOptions.listTitle);
+            $item.parent('.' + rflOptions.subAccordionClass).parent('.' + rflOptions.subItemClass).remove();
+            $item.parent('.' + rflOptions.subAccordionClass).remove();
+        }
+
+        $item.next('.' + rflOptions.subItemClass).children(rflOptions.listNode).find('*').remove();
+        $item.next('.' + rflOptions.subItemClass).children(rflOptions.listNode).remove();
+        $item.next('.' + rflOptions.subItemClass).remove();
+        $item.find('*').remove();
+        $item.remove();
+    }
+}
