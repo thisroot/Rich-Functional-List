@@ -99,7 +99,8 @@ function pluginMediaQueries(reset, options) {
 }
 
 function updateWindow(reset, columns, base, width, windowSize, options) {
-    var newOptions = $.extend({}, options, {max_cols : columns});
+    var newOptions = $.extend({}, options, {max_cols : columns}),
+        gridster;
 
     if (reset) {
         $(".gridster #base-list").gridster().data('gridster').destroy();
@@ -109,8 +110,11 @@ function updateWindow(reset, columns, base, width, windowSize, options) {
     $('#base-list').children('li').each(gridsterResizeCard);
     // Start the gridster plugin.
     $(".gridster #base-list").gridster(newOptions);
+    // (Partial fix.) Update the plugin to the latest settings.
+    gridster = $(".gridster #base-list").gridster().data('gridster');
+    gridster.recalculate_faux_grid();
 
-    // Resize the menu.
+    // Resize the list.
     $('#base-list').css('width', width + 'px');
     if (windowSize >= 650) {
         $('#flash-messaging').insertAfter('h1');
